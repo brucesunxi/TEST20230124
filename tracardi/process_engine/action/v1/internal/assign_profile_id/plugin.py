@@ -69,7 +69,7 @@ def register() -> Plugin:
         ),
         metadata=MetaData(
             name='Assign profile id',
-            #desc='Assigns new profile id to the event.',
+            #desc='Assigns new profile id to the event.', 孙溪修改
             desc='我改了这个地方',
             icon='hash',
             group=["Operations"],
