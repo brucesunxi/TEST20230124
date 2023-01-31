@@ -160,13 +160,16 @@ def register() -> Plugin:
                     ]
                 ),
             ]),
-            version="0.6.1",
-            author="Risto Kowaczewski",
-            license="MIT"
+            # version="0.6.1",
+            # author="Risto Kowaczewski",
+            # license="MIT"
         ),
         metadata=MetaData(
-            name='HTML fetcher',
-            desc='Fetches HTML page.',
+        # change sunxi
+          name='HTML 提取器',
+        #    name='HTML fetcher',
+          desc='提取HTML页面内容.',
+        # desc='Fetches HTML page.',
             icon='globe',
             group=["Connectors"]
         )
