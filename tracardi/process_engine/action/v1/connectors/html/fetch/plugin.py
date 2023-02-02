@@ -160,9 +160,12 @@ def register() -> Plugin:
                     ]
                 ),
             ]),
-            # version="0.6.1",
-            # author="Risto Kowaczewski",
+            # start changed by sunxi
+            version="0.6.1",
+            #  author="Risto Kowaczewski",
+            author="JRYS",
             # license="MIT"
+            # end changed by sunxi
         ),
         metadata=MetaData(
         # change sunxi

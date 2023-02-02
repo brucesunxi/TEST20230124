@@ -4,399 +4,397 @@ from tracardi.service.plugin.plugin_install import install_plugins
 from tracardi.service.setup.domain.plugin_test_template import PluginTestTemplate
 
 installed_plugins: Dict[str, PluginTestTemplate] = {
-    ##start changed by sunxi
-    # "tracardi.process_engine.action.v1.time.last_profile_visit.plugin": PluginTestTemplate(
-    #     init=None,
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.internal.limiter.plugin": PluginTestTemplate(
-    #     init={
-    #           "keys": [],
-    #           "limit": 10,
-    #           "ttl": 60
-    #         },
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.connectors.google.analytics.registry": PluginTestTemplate(
-    #     init={'source': {'id': 'id', 'name': 'name'}, 'category': 'category', 'action': 'action', 'label': 'label',
-    #           'value': 'value'},
-    #     resource={
-    #         "google_analytics_id": "google_analytics_id"
-    #     }
-    # ),
-
-    # "tracardi.process_engine.action.v1.connectors.whois.plugin": PluginTestTemplate(
-    #     init={"domain": "some.com"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.ux.intercom.plugin": PluginTestTemplate(
-    #     init={"app_id": "some-number", "api_url": "http://localhost:8686"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.contains_pattern.plugin": PluginTestTemplate(
-    #     init={"field": "payload@field", "pattern": "all"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.connectors.google.translate.plugin": PluginTestTemplate(
-    #     init={"text_to_translate": "Hello", "source_language": "en"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.memory.collect.plugin": PluginTestTemplate(
-    #     init={'name': 'Test name', 'type': 'list'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.password_generator_action": PluginTestTemplate(
-    #     init={'lowercase': 4, 'max_length': 13, 'min_length': 8, 'special_characters': 2, 'uppercase': 2},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.weekdays_checker_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-    # "tracardi.process_engine.action.v1.flow.start.start_action": PluginTestTemplate(
-    #     init={'debug': False, 'event_id': None, 'event_type': {'id': '', 'name': ''}, 'event_types': [],
-    #           'profile_less': False, 'properties': '{}', 'session_less': False},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.flow.start_segmentation.plugin": PluginTestTemplate(
-    #     init={'profile_id': "id"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.flow.property_exists.plugin": PluginTestTemplate(
-    #     init={'property': 'event@context.page.url'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.end_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.raise_error_action": PluginTestTemplate(
-    #     init={'message': 'Flow stopped due to error.'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.inject_action": PluginTestTemplate(
-    #     init={'destination': 'payload', 'value': '{}'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.increase_views_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.increase_visits_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.increment_action": PluginTestTemplate(
-    #     init={'field': 'profile@stats.counters.test', 'increment': 1},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.decrement_action": PluginTestTemplate(
-    #     init={'decrement': 1, 'field': 'profile@stats.counters.test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.if_action": PluginTestTemplate(
-    #     init={'condition': 'event@id=="1"'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.starts_with_action": PluginTestTemplate(
-    #     init={'field': 'event@id', 'prefix': 'test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.ends_with_action": PluginTestTemplate(
-    #     init={'field': 'event@id', 'prefix': 'test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.new_visit_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.new_profile_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.template_action": PluginTestTemplate(
-    #     init={'template': ''},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.sort_dictionary": PluginTestTemplate(
-    #     init={"direction": "asc", "data": "data", "sort_by": "key"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.misc.uuid4.plugin": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.copy_trait_action": PluginTestTemplate(
-    #     init={'traits': {'set': {}}},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.append_trait_action": PluginTestTemplate(
-    #     init={'append': {'target1': 'source1', 'target2': 'source2'}, 'remove': {'target': ['item1', 'item2']}},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.cut_out_trait_action": PluginTestTemplate(
-    #     init={'trait': 'event@...'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.delete_trait_action": PluginTestTemplate(
-    #     init={'delete': ['event@id']},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.auto_merge_properties_to_profile_action": PluginTestTemplate(
-    #     init={'sub_traits': '', 'traits_type': 'public'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.assign_condition_result.plugin": PluginTestTemplate(
-    #     init={'conditions': {}},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.condition_set.plugin": PluginTestTemplate(
-    #     init={'conditions': {}},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.hash_traits_action": PluginTestTemplate(
-    #     init={'func': 'md5', 'traits': []},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.mask_traits_action": PluginTestTemplate(
-    #     init={'traits': []},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.join_payloads.plugin": PluginTestTemplate(
-    #     init={'default': True, 'reshape': '{}', 'type': 'dict'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.merge_profiles_action": PluginTestTemplate(
-    #     init={'mergeBy': ['profile@pii.email']},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.update_profile_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.discard_profile_update_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.update_event_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.update_session_action": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.reduce_array.plugin": PluginTestTemplate(
-    #     init={'array': 'payload@test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.calculator_action": PluginTestTemplate(
-    #     init={'calc_dsl': 'a = profile@id + 1'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.mapping_action": PluginTestTemplate(
-    #     init={'case_sensitive': False, 'mapping': {'a': 'profile@id'}, 'value': 'x'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.return_random_element_action": PluginTestTemplate(
-    #     init={'list_of_items': [1, 2, 3, 4, 5]},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.log_action": PluginTestTemplate(
-    #     init={'message': '<log-message>', 'type': 'warning'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.scrapper.xpath.plugin": PluginTestTemplate(
-    #     init={'content': "", 'xpath': ""},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.operations.threshold.plugin": PluginTestTemplate(
-    #     init={'assign_to_profile': True, 'name': "test", 'ttl': 1800, 'value': "1"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.geo.fence.circular.plugin": PluginTestTemplate(
-    #     init={
-    #         "center_coordinate": {"lat": 0, "lng": 0},
-    #         "test_coordinate": {"lat": 0, "lng": 0},
-    #         "radius": 10
-    #     },
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.geo.distance.plugin": PluginTestTemplate(
-    #     init={
-    #         "start_coordinate": {"lat": 0, "lng": 0},
-    #         "end_coordinate": {"lat": 0, "lng": 0},
-    #     },
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.reshape_payload_action": PluginTestTemplate(
-    #     init={'default': True, 'value': '{}'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.detect_client_agent_action": PluginTestTemplate(
-    #     init={'agent': 'session@context.browser.browser.userAgent'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.traits.field_type_action": PluginTestTemplate(
-    #     init={'field': "profile@id"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.events.event_counter.plugin": PluginTestTemplate(
-    #     init={
-    #         "event_type": {'id': '1', 'name': 'Some value'},
-    #         "time_span": "-15m"
-    #     },
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.events.event_aggregator.plugin": PluginTestTemplate(
-    #     init={
-    #         "field": {'id': '1', 'name': 'Some value'},
-    #         "time_span": "-15m"
-    #     },
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.events.event_discarder.plugin": PluginTestTemplate(
-    #     init={},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.json_schema_validation_action": PluginTestTemplate(
-    #     init={'validation_schema': {}},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.string_operations.plugin": PluginTestTemplate(
-    #     init={'string': 'test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.regex_match.plugin": PluginTestTemplate(
-    #     init={'group_prefix': 'Group', 'pattern': '<pattern>', 'text': '<text or path to text>'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.regex_validator.plugin": PluginTestTemplate(
-    #     init={'data': "a", 'validation_regex': "/a/"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.string_validator.plugin": PluginTestTemplate(
-    #     init={'data': 'test', 'validator': 'test'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.string_splitter.plugin": PluginTestTemplate(
-    #     init={'delimiter': '.', 'string': "test.test"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.string_join.plugin": PluginTestTemplate(
-    #     init={'delimiter': ',', 'string': "payload@test"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.url_parser.plugin": PluginTestTemplate(
-    #     init={'url': 'session@context.page.url'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.regex_replace.plugin": PluginTestTemplate(
-    #     init={'find_regex': "abc", 'replace_with': "123", 'string': "abc"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.strings.string_similarity.plugin": PluginTestTemplate(
-    #     init={'first_string': "abc", 'second_string': "abc", 'algorithm': "levenshtein"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.time.sleep_action": PluginTestTemplate(
-    #     init={'wait': 1},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.time.today_action": PluginTestTemplate(
-    #     init={'timezone': 'session@context.time.tz'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.time.day_night.plugin": PluginTestTemplate(
-    #     init={'latitude': 1.2, 'longitude': 2.1},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.time.local_time_span.plugin": PluginTestTemplate(
-    #     init={'end': "10:10:10", 'start': "12:10:10", 'timezone': 'session@context.time.tz'},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.time.time_difference.plugin": PluginTestTemplate(
-    #     init={'now': 'now', 'reference_date': "12:10:10"},
-    #     resource=None
-    # ),
-
-    # "tracardi.process_engine.action.v1.ux.consent.plugin": PluginTestTemplate(
-    #     init={'agree_all_event_type': 'agree-all-event-type', 'enabled': True, 'endpoint': 'http://localhost:8686',
-    #           'event_type': 'user-consent-pref', 'expand_height': 400, 'position': 'bottom',
-    #           'uix_source': 'http://localhost:8686'},
-    #     resource=None
-    # ),
-    ##end changed by sunxi
+    "tracardi.process_engine.action.v1.time.last_profile_visit.plugin": PluginTestTemplate(
+        init=None,
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.internal.limiter.plugin": PluginTestTemplate(
+        init={
+              "keys": [],
+              "limit": 10,
+              "ttl": 60
+            },
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.connectors.google.analytics.registry": PluginTestTemplate(
+        init={'source': {'id': 'id', 'name': 'name'}, 'category': 'category', 'action': 'action', 'label': 'label',
+              'value': 'value'},
+        resource={
+            "google_analytics_id": "google_analytics_id"
+        }
+    ),
+
+    "tracardi.process_engine.action.v1.connectors.whois.plugin": PluginTestTemplate(
+        init={"domain": "some.com"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.ux.intercom.plugin": PluginTestTemplate(
+        init={"app_id": "some-number", "api_url": "http://localhost:8686"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.contains_pattern.plugin": PluginTestTemplate(
+        init={"field": "payload@field", "pattern": "all"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.connectors.google.translate.plugin": PluginTestTemplate(
+        init={"text_to_translate": "Hello", "source_language": "en"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.memory.collect.plugin": PluginTestTemplate(
+        init={'name': 'Test name', 'type': 'list'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.password_generator_action": PluginTestTemplate(
+        init={'lowercase': 4, 'max_length': 13, 'min_length': 8, 'special_characters': 2, 'uppercase': 2},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.weekdays_checker_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+    "tracardi.process_engine.action.v1.flow.start.start_action": PluginTestTemplate(
+        init={'debug': False, 'event_id': None, 'event_type': {'id': '', 'name': ''}, 'event_types': [],
+              'profile_less': False, 'properties': '{}', 'session_less': False},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.flow.start_segmentation.plugin": PluginTestTemplate(
+        init={'profile_id': "id"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.flow.property_exists.plugin": PluginTestTemplate(
+        init={'property': 'event@context.page.url'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.end_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.raise_error_action": PluginTestTemplate(
+        init={'message': 'Flow stopped due to error.'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.inject_action": PluginTestTemplate(
+        init={'destination': 'payload', 'value': '{}'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.increase_views_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.increase_visits_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.increment_action": PluginTestTemplate(
+        init={'field': 'profile@stats.counters.test', 'increment': 1},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.decrement_action": PluginTestTemplate(
+        init={'decrement': 1, 'field': 'profile@stats.counters.test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.if_action": PluginTestTemplate(
+        init={'condition': 'event@id=="1"'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.starts_with_action": PluginTestTemplate(
+        init={'field': 'event@id', 'prefix': 'test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.ends_with_action": PluginTestTemplate(
+        init={'field': 'event@id', 'prefix': 'test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.new_visit_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.new_profile_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.template_action": PluginTestTemplate(
+        init={'template': ''},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.sort_dictionary": PluginTestTemplate(
+        init={"direction": "asc", "data": "data", "sort_by": "key"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.misc.uuid4.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.copy_trait_action": PluginTestTemplate(
+        init={'traits': {'set': {}}},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.append_trait_action": PluginTestTemplate(
+        init={'append': {'target1': 'source1', 'target2': 'source2'}, 'remove': {'target': ['item1', 'item2']}},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.cut_out_trait_action": PluginTestTemplate(
+        init={'trait': 'event@...'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.delete_trait_action": PluginTestTemplate(
+        init={'delete': ['event@id']},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.auto_merge_properties_to_profile_action": PluginTestTemplate(
+        init={'sub_traits': '', 'traits_type': 'public'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.assign_condition_result.plugin": PluginTestTemplate(
+        init={'conditions': {}},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.condition_set.plugin": PluginTestTemplate(
+        init={'conditions': {}},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.hash_traits_action": PluginTestTemplate(
+        init={'func': 'md5', 'traits': []},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.mask_traits_action": PluginTestTemplate(
+        init={'traits': []},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.join_payloads.plugin": PluginTestTemplate(
+        init={'default': True, 'reshape': '{}', 'type': 'dict'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.merge_profiles_action": PluginTestTemplate(
+        init={'mergeBy': ['profile@pii.email']},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.update_profile_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.discard_profile_update_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.update_event_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.update_session_action": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.reduce_array.plugin": PluginTestTemplate(
+        init={'array': 'payload@test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.calculator_action": PluginTestTemplate(
+        init={'calc_dsl': 'a = profile@id + 1'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.mapping_action": PluginTestTemplate(
+        init={'case_sensitive': False, 'mapping': {'a': 'profile@id'}, 'value': 'x'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.return_random_element_action": PluginTestTemplate(
+        init={'list_of_items': [1, 2, 3, 4, 5]},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.log_action": PluginTestTemplate(
+        init={'message': '<log-message>', 'type': 'warning'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.scrapper.xpath.plugin": PluginTestTemplate(
+        init={'content': "", 'xpath': ""},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.operations.threshold.plugin": PluginTestTemplate(
+        init={'assign_to_profile': True, 'name': "test", 'ttl': 1800, 'value': "1"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.geo.fence.circular.plugin": PluginTestTemplate(
+        init={
+            "center_coordinate": {"lat": 0, "lng": 0},
+            "test_coordinate": {"lat": 0, "lng": 0},
+            "radius": 10
+        },
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.geo.distance.plugin": PluginTestTemplate(
+        init={
+            "start_coordinate": {"lat": 0, "lng": 0},
+            "end_coordinate": {"lat": 0, "lng": 0},
+        },
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.reshape_payload_action": PluginTestTemplate(
+        init={'default': True, 'value': '{}'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.detect_client_agent_action": PluginTestTemplate(
+        init={'agent': 'session@context.browser.browser.userAgent'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.traits.field_type_action": PluginTestTemplate(
+        init={'field': "profile@id"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.events.event_counter.plugin": PluginTestTemplate(
+        init={
+            "event_type": {'id': '1', 'name': 'Some value'},
+            "time_span": "-15m"
+        },
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.events.event_aggregator.plugin": PluginTestTemplate(
+        init={
+            "field": {'id': '1', 'name': 'Some value'},
+            "time_span": "-15m"
+        },
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.events.event_discarder.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.json_schema_validation_action": PluginTestTemplate(
+        init={'validation_schema': {}},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.string_operations.plugin": PluginTestTemplate(
+        init={'string': 'test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.regex_match.plugin": PluginTestTemplate(
+        init={'group_prefix': 'Group', 'pattern': '<pattern>', 'text': '<text or path to text>'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.regex_validator.plugin": PluginTestTemplate(
+        init={'data': "a", 'validation_regex': "/a/"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.string_validator.plugin": PluginTestTemplate(
+        init={'data': 'test', 'validator': 'test'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.string_splitter.plugin": PluginTestTemplate(
+        init={'delimiter': '.', 'string': "test.test"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.string_join.plugin": PluginTestTemplate(
+        init={'delimiter': ',', 'string': "payload@test"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.url_parser.plugin": PluginTestTemplate(
+        init={'url': 'session@context.page.url'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.regex_replace.plugin": PluginTestTemplate(
+        init={'find_regex': "abc", 'replace_with': "123", 'string': "abc"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.strings.string_similarity.plugin": PluginTestTemplate(
+        init={'first_string': "abc", 'second_string': "abc", 'algorithm': "levenshtein"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.time.sleep_action": PluginTestTemplate(
+        init={'wait': 1},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.time.today_action": PluginTestTemplate(
+        init={'timezone': 'session@context.time.tz'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.time.day_night.plugin": PluginTestTemplate(
+        init={'latitude': 1.2, 'longitude': 2.1},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.time.local_time_span.plugin": PluginTestTemplate(
+        init={'end': "10:10:10", 'start': "12:10:10", 'timezone': 'session@context.time.tz'},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.time.time_difference.plugin": PluginTestTemplate(
+        init={'now': 'now', 'reference_date': "12:10:10"},
+        resource=None
+    ),
+
+    "tracardi.process_engine.action.v1.ux.consent.plugin": PluginTestTemplate(
+        init={'agree_all_event_type': 'agree-all-event-type', 'enabled': True, 'endpoint': 'http://localhost:8686',
+              'event_type': 'user-consent-pref', 'expand_height': 400, 'position': 'bottom',
+              'uix_source': 'http://localhost:8686'},
+        resource=None
+    ),
 
     "tracardi.process_engine.action.v1.connectors.html.fetch.plugin": PluginTestTemplate(
         init={'body': '', 'cookies': {}, 'headers': {}, 'method': 'get', 'ssl_check': True, 'timeout': 30,
@@ -404,256 +402,254 @@ installed_plugins: Dict[str, PluginTestTemplate] = {
         resource=None
     ),
 
-    # start changed by sunxi
-#     "tracardi.process_engine.action.v1.connectors.api_call.plugin": PluginTestTemplate(
-#         init={'body': {'content': '{}', 'type': 'application/json'}, 'cookies': {}, 'endpoint': "/test", 'headers': {},
-#               'method': 'post', 'source': {'id': '1', 'name': 'Some value'}, 'ssl_check': True, 'timeout': 30},
-#         resource={
-#             "url": "http://localhost"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.api_call.plugin": PluginTestTemplate(
+        init={'body': {'content': '{}', 'type': 'application/json'}, 'cookies': {}, 'endpoint': "/test", 'headers': {},
+              'method': 'post', 'source': {'id': '1', 'name': 'Some value'}, 'ssl_check': True, 'timeout': 30},
+        resource={
+            "url": "http://localhost"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.smtp_call.plugin": PluginTestTemplate(
-#         init={'message': {'message': 'message', 'reply_to': 'mail@mail.co', 'send_from': 'mail@mail.co',
-#                           'send_to': 'mail@mail.co', 'title': 'title'},
-#               'source': {'id': '', 'name': ''}},
-#         resource={
-#             "smtp": "a",
-#             "port": 1,
-#             "username": "u",
-#             "password": "p"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.smtp_call.plugin": PluginTestTemplate(
+        init={'message': {'message': 'message', 'reply_to': 'mail@mail.co', 'send_from': 'mail@mail.co',
+                          'send_to': 'mail@mail.co', 'title': 'title'},
+              'source': {'id': '', 'name': ''}},
+        resource={
+            "smtp": "a",
+            "port": 1,
+            "username": "u",
+            "password": "p"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.force.plugin": PluginTestTemplate(
-#         init={},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.force.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.has.plugin": PluginTestTemplate(
-#         init={"segment": "abc"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.has.plugin": PluginTestTemplate(
+        init={"segment": "abc"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.conditional.plugin": PluginTestTemplate(
-#         init={'condition': 'profile@id exists', 'false_action': 'remove', 'false_segment': 'xxx', 'true_action': 'add',
-#               'true_segment': 'zzz'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.conditional.plugin": PluginTestTemplate(
+        init={'condition': 'profile@id exists', 'false_action': 'remove', 'false_segment': 'xxx', 'true_action': 'add',
+              'true_segment': 'zzz'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.add.plugin": PluginTestTemplate(
-#         init={'segment': 'abc'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.add.plugin": PluginTestTemplate(
+        init={'segment': 'abc'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.memorize.plugin": PluginTestTemplate(
-#         init={'memory_key': 'abc'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.memorize.plugin": PluginTestTemplate(
+        init={'memory_key': 'abc'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.recall.plugin": PluginTestTemplate(
-#         init={'memory_key': 'abc'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.recall.plugin": PluginTestTemplate(
+        init={'memory_key': 'abc'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.delete.plugin": PluginTestTemplate(
-#         init={'segment': 'abc'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.delete.plugin": PluginTestTemplate(
+        init={'segment': 'abc'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.segmentation.move.plugin": PluginTestTemplate(
-#         init={'from_segment': 'abc', 'to_segment': "asd"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.segmentation.move.plugin": PluginTestTemplate(
+        init={'from_segment': 'abc', 'to_segment': "asd"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.converters.data_to_json.plugin": PluginTestTemplate(
-#         init={'to_json': "{}"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.converters.data_to_json.plugin": PluginTestTemplate(
+        init={'to_json': "{}"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.converters.json_to_data.plugin": PluginTestTemplate(
-#         init={'to_data': "{}"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.converters.json_to_data.plugin": PluginTestTemplate(
+        init={'to_data': "{}"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.discord.push.plugin": PluginTestTemplate(
-#         init={'message': 'message', 'timeout': 10, 'url': "http://url", 'username': "test"},
-#         resource={
-#             "url": "test"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.discord.push.plugin": PluginTestTemplate(
+        init={'message': 'message', 'timeout': 10, 'url': "http://url", 'username': "test"},
+        resource={
+            "url": "test"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.maxmind.geoip.plugin": PluginTestTemplate(
-#         init={'ip': 'event@request.ip', 'source': {'id': '1', 'name': 'Some value'}},
-#         resource={
-#             "accountId": 123,
-#             "license": 'test'
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.maxmind.geoip.plugin": PluginTestTemplate(
+        init={'ip': 'event@request.ip', 'source': {'id': '1', 'name': 'Some value'}},
+        resource={
+            "accountId": 123,
+            "license": 'test'
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.weather.msn_weather.plugin": PluginTestTemplate(
-#         init={'city': "London", 'system': 'C'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.connectors.weather.msn_weather.plugin": PluginTestTemplate(
+        init={'city': "London", 'system': 'C'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.oauth2_token.plugin": PluginTestTemplate(
-#         init={'destination': "payload@dest", 'source': {'id': '1', 'name': 'Some value'}},
-#         resource={
-#             "url": "http://url",
-#             "token": "abc"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.oauth2_token.plugin": PluginTestTemplate(
+        init={'destination': "payload@dest", 'source': {'id': '1', 'name': 'Some value'}},
+        resource={
+            "url": "http://url",
+            "token": "abc"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.slack.send_message.plugin": PluginTestTemplate(
-#         init={'channel': "xxx", 'message': "xxx", 'source': {'id': '1', 'name': 'Some value'}},
-#         resource={
-#             "token": "abc"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.slack.send_message.plugin": PluginTestTemplate(
+        init={'channel': "xxx", 'message': "xxx", 'source': {'id': '1', 'name': 'Some value'}},
+        resource={
+            "token": "abc"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.google.sheets.modify.plugin": PluginTestTemplate(
-#         init={'range': "A1:A2", 'read': False, 'sheet_name': "sheet", 'source': {'id': '1', 'name': 'Some value'},
-#               'spreadsheet_id': "1", 'values': '[["Name", "John"]]', 'write': False},
-#         resource={
-#             "api_key": "api_key"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.google.sheets.modify.plugin": PluginTestTemplate(
+        init={'range': "A1:A2", 'read': False, 'sheet_name': "sheet", 'source': {'id': '1', 'name': 'Some value'},
+              'spreadsheet_id': "1", 'values': '[["Name", "John"]]', 'write': False},
+        resource={
+            "api_key": "api_key"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.connectors.twitter.tweet.plugin": PluginTestTemplate(
-#         init={'source': {'id': '1', 'name': '1'}, 'tweet': 'tweet'},
-#         resource={
-#             'api_key': '<api_key',
-#             'api_secret': '<api_secret>',
-#             'access_token': '<access_token>',
-#             'access_token_secret': '<access_token_secret>'
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.connectors.twitter.tweet.plugin": PluginTestTemplate(
+        init={'source': {'id': '1', 'name': '1'}, 'tweet': 'tweet'},
+        resource={
+            'api_key': '<api_key',
+            'api_secret': '<api_secret>',
+            'access_token': '<access_token>',
+            'access_token_secret': '<access_token_secret>'
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.assign_profile_id.plugin": PluginTestTemplate(
-#         init={'value': ''},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.assign_profile_id.plugin": PluginTestTemplate(
+        init={'value': ''},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.event_source_fetcher.plugin": PluginTestTemplate(
-#         init={},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.event_source_fetcher.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.inject_event.plugin": PluginTestTemplate(
-#         init={'event_id': "abc"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.inject_event.plugin": PluginTestTemplate(
+        init={'event_id': "abc"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.inject_profile_by_field.plugin": PluginTestTemplate(
-#         init={'field': "pii.email", 'value': 'test@test.com'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.inject_profile_by_field.plugin": PluginTestTemplate(
+        init={'field': "pii.email", 'value': 'test@test.com'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.add_empty_profile.plugin": PluginTestTemplate(
-#         init={},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.add_empty_profile.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.get_prev_event.plugin": PluginTestTemplate(
-#         init={'event_type': {'id': '@current', 'name': '@current'}, 'offset': -1},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.get_prev_event.plugin": PluginTestTemplate(
+        init={'event_type': {'id': '@current', 'name': '@current'}, 'offset': -1},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.get_prev_session.plugin": PluginTestTemplate(
-#         init={'offset': -1},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.get_prev_session.plugin": PluginTestTemplate(
+        init={'offset': -1},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.query_string.plugin": PluginTestTemplate(
-#         init={'index': "None", 'query': '', 'time_range': "+1d"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.query_string.plugin": PluginTestTemplate(
+        init={'index': "None", 'query': '', 'time_range': "+1d"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.add_empty_session.plugin": PluginTestTemplate(
-#         init={},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.add_empty_session.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.entity.upsert.plugin": PluginTestTemplate(
-#         init={'id': "1", 'properties': '{}', 'reference_profile': True, 'traits': '{}', 'type': 'type'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.entity.upsert.plugin": PluginTestTemplate(
+        init={'id': "1", 'properties': '{}', 'reference_profile': True, 'traits': '{}', 'type': 'type'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.entity.load.plugin": PluginTestTemplate(
-#         init={'id': "1", 'reference_profile': True, 'type': {'id': 'type', 'name': 'type'}},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.entity.load.plugin": PluginTestTemplate(
+        init={'id': "1", 'reference_profile': True, 'type': {'id': 'type', 'name': 'type'}},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.entity.delete.plugin": PluginTestTemplate(
-#         init={'id': '1', 'reference_profile': True, 'type': {'id': 'type', 'name': 'type'}},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.entity.delete.plugin": PluginTestTemplate(
+        init={'id': '1', 'reference_profile': True, 'type': {'id': 'type', 'name': 'type'}},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.get_report.plugin": PluginTestTemplate(
-#         init={'report_config': {'params': '{}', 'report': {'id': '1', 'name': '1'}}},
-#         resource={
+    "tracardi.process_engine.action.v1.internal.get_report.plugin": PluginTestTemplate(
+        init={'report_config': {'params': '{}', 'report': {'id': '1', 'name': '1'}}},
+        resource={
 
-#         }
-#     ),
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.internal.add_response.plugin": PluginTestTemplate(
-#         init={'body': '{}', 'default': True, 'key': 'key'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.internal.add_response.plugin": PluginTestTemplate(
+        init={'body': '{}', 'default': True, 'key': 'key'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.metrics.key_counter.plugin": PluginTestTemplate(
-#         init={'key': "1", 'save_in': "2"},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.metrics.key_counter.plugin": PluginTestTemplate(
+        init={'key': "1", 'save_in': "2"},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.microservice.plugin": PluginTestTemplate(
-#         init={},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.microservice.plugin": PluginTestTemplate(
+        init={},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.consents.add_consent_action.plugin": PluginTestTemplate(
-#         init={'consents': 'aa'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.consents.add_consent_action.plugin": PluginTestTemplate(
+        init={'consents': 'aa'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.consents.require_consents_action.plugin": PluginTestTemplate(
-#         init={'consent_ids': [], 'require_all': False},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.consents.require_consents_action.plugin": PluginTestTemplate(
+        init={'consent_ids': [], 'require_all': False},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.flow.postpone_event.plugin": PluginTestTemplate(
-#         init={"event_type": 'test'},
-#         resource=None
-#     ),
+    "tracardi.process_engine.action.v1.flow.postpone_event.plugin": PluginTestTemplate(
+        init={"event_type": 'test'},
+        resource=None
+    ),
 
-#     "tracardi.process_engine.action.v1.contains_string_action": PluginTestTemplate(
-#         init={
-#             "field": "payload@field",
-#             "substring": "contains"
-#         }
-#     ),
+    "tracardi.process_engine.action.v1.contains_string_action": PluginTestTemplate(
+        init={
+            "field": "payload@field",
+            "substring": "contains"
+        }
+    ),
 
-#     "tracardi.process_engine.action.v1.converters.base64.encode.plugin": PluginTestTemplate(
-#         init={
-#             'source': '',
-#             'source_encoding': '',
-#         },
-#         resource=None,
-#     ),
+    "tracardi.process_engine.action.v1.converters.base64.encode.plugin": PluginTestTemplate(
+        init={
+            'source': '',
+            'source_encoding': '',
+        },
+        resource=None,
+    ),
 
-#     "tracardi.process_engine.action.v1.converters.base64.decode.plugin": PluginTestTemplate(
-#         init={
-#             'source': '',
-#             'target_encoding': '',
-#         },
-#         resource=None,
-#     ),
+    "tracardi.process_engine.action.v1.converters.base64.decode.plugin": PluginTestTemplate(
+        init={
+            'source': '',
+            'target_encoding': '',
+        },
+        resource=None,
+    ),
 
-#     "tracardi.process_engine.action.v1.sort_array_action": PluginTestTemplate(
-#         init={"data": "event@properties.list_of_something", "direction": "asc"},
-#         resource=None
-#     ),
-# end changed by sunxi
+    "tracardi.process_engine.action.v1.sort_array_action": PluginTestTemplate(
+        init={"data": "event@properties.list_of_something", "direction": "asc"},
+        resource=None
+    ),
 }
 
 

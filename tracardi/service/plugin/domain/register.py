@@ -140,7 +140,10 @@ class Documentation(BaseModel):
 
 class MetaData(BaseModel):
     name: str
-    brand: Optional[str] = "Tracardi"
+    # start changed by sunxi
+    brand: Optional[str] = "JRYS"
+    # brand: Optional[str] = "Tracardi"    
+    # start changed by sunxi
     desc: Optional[str] = ""
     keywords: Optional[List[str]] = []
     type: str = 'flowNode'

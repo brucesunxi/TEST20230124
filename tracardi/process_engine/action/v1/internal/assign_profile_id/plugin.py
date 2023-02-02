@@ -68,7 +68,8 @@ def register() -> Plugin:
 
         ),
         metadata=MetaData(
-            name='Assign profile id',
+            # name='Assign profile id',
+            name='分配特征ID',
             #desc='Assigns new profile id to the event.', 
             desc='分配特征ID',
             icon='hash',
